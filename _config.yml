@@ -1,100 +1,108 @@
-# Site settings
-author: Kimfucious
-baseurl: ""
-brand: Sakura
-copyright: abts.io
-description: A clean Jekyll theme with baked in Bootstrap 4, responsive images, and more...
-email: example@example.com 
-title: Sakura Jekyll Theme 
-url: "https://sakura.abts.io"
-
-# Not using because Gulp is now processing SCSS
-# sass:
-#   sass_dir: css
-#   style: compressed
-
-# Algolia Search
-algolia:
-  application_id: 4P42FOBOZA # Use your (non-admin) search only api key here.
-  index_name: sakura #Use an index you created on Algolia.
-
-# Collections
-collections:
-  docs:
-    output: true
-    permalink: "/:collection/:path/"
-  posts:
-    output: true
-    permalink: "/:collection/:title/"
-
-# Defaults : these allow you to set default values for front matter
-defaults:
-  - scope:
-      path: "_posts"
-      type: posts
-    values:
-      layout: post 
-      type: post
-  - scope:
-      path: "pages"
-      type: pages
-    values:
-      layout: default 
-  - scope:
-      path: "_docs"
-      type: docs
-    values:
-      layout: post
-      type: doc
-
-# Exclude from Jekyll processing
-exclude: [
-  "_assets",
-  "Gemfile",
-  "Gemfile.lock",
-  "gulpfile.js",
-  "node_modules",
-  "package.json",
-  "publish.sh",
-  "yarn-error.log",
-  "yarn.lock"
-]
-
-# Pagination (using jekyll-paginate-v2)
-pagination:
-  enabled: true
-  per_page: 4 
-  paginate_path: "/page:num"
-  sort_reverse: true
-  title: ":title"
-  trail:
-    before: 2
-    after: 2
-
-# Plugins
-plugins: [jekyll-paginate-v2, jemoji, jekyll-sitemap, jekyll-seo-tag]
-
-# SEO
-social:
-  name: Kimfucious
-  links:
-    - https://github.com/kimfucious
-    - https://www.linkedin.com/in/kimaford/
-webmaster_verifications:
-  google: uubLfpcORmDWkM8pI-yKODVVZD3VSpUYFSwkQJcOuZE
+# Site Settings
+name: Jekflix
+title: Jekflix | A blog theme for Jekyll
+description: Jekflix is a template for Jekyll inspired by Netflix and made by
+  Thiago Rossener.
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+show_hero: true
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+  - title: Feed
+    url: /feed.xml
+email: youremail@test.com
+# See: https://disqus.com/
+disqus_username: disqus_username
+# Contact Form Setting
+# See: https://formspree.io/
+formspree_form_id: formspree_form_id
 
 
-# Social icons
-show_social_icons: true
-facebook_username: 
-github_username: kimfucious 
-googleplus_username: 
-linkedin_username: kimaford
-slack_username: 
-twitter_username: 
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
 
-# Syntax highlighting <= disables built-in highlighter so that we can use Prism
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
+language: "en"
+categories_folder: category
+sent_message_url: "/contact/message-sent/"
+
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  input: GFM
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+show_get_theme_btn: true
+use_logo: false
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# SASS
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+
+# Exclude my node related stuff
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]
+
+# Theme
+version: v3.1.1

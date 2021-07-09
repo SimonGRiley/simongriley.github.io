@@ -1,9 +1,8 @@
-_algolia_api_key
-_site
-.bundle
+.idea
+.DS_Store
 .sass-cache
-*.gem
-assets
 Gemfile.lock
+package-json.lock
+_site
 node_modules
-yarn-error.log
+_drafts
